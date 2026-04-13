@@ -58,8 +58,10 @@ export type PageTemplateContextState = {
     globalTemplate: PageTemplateFragment | null;
     template: PageTemplateFragment | null;
     isEditingGlobalTemplate: boolean;
+    isEditingPersonalTemplate: boolean;
     templateType: PageTemplateSurfaceType;
     setIsEditingGlobalTemplate: (val: boolean) => void;
+    setIsEditingPersonalTemplate: (val: boolean) => void;
     setPersonalTemplate: (template: PageTemplateFragment | null) => void;
     setGlobalTemplate: (template: PageTemplateFragment | null) => void;
     setTemplate: (template: PageTemplateFragment | null) => void;

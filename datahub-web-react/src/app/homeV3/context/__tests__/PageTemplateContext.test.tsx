@@ -82,6 +82,7 @@ const mockGlobalTemplate: PageTemplateFragment = {
 
 // Mock functions
 const mockSetIsEditingGlobalTemplate = vi.fn();
+const mockSetIsEditingPersonalTemplate = vi.fn();
 const mockSetPersonalTemplate = vi.fn();
 const mockSetGlobalTemplate = vi.fn();
 const mockSetTemplate = vi.fn();
@@ -104,7 +105,9 @@ describe('PageTemplateContext', () => {
             globalTemplate: mockGlobalTemplate,
             template: mockPersonalTemplate,
             isEditingGlobalTemplate: false,
+            isEditingPersonalTemplate: false,
             setIsEditingGlobalTemplate: mockSetIsEditingGlobalTemplate,
+            setIsEditingPersonalTemplate: mockSetIsEditingPersonalTemplate,
             setPersonalTemplate: mockSetPersonalTemplate,
             setGlobalTemplate: mockSetGlobalTemplate,
             setTemplate: mockSetTemplate,
@@ -205,7 +208,9 @@ describe('PageTemplateContext', () => {
                 globalTemplate: null,
                 template: null,
                 isEditingGlobalTemplate: false,
+                isEditingPersonalTemplate: false,
                 setIsEditingGlobalTemplate: mockSetIsEditingGlobalTemplate,
+                setIsEditingPersonalTemplate: mockSetIsEditingPersonalTemplate,
                 setPersonalTemplate: mockSetPersonalTemplate,
                 setGlobalTemplate: mockSetGlobalTemplate,
                 setTemplate: mockSetTemplate,
@@ -240,7 +245,9 @@ describe('PageTemplateContext', () => {
                 globalTemplate: null,
                 template: null,
                 isEditingGlobalTemplate: false,
+                isEditingPersonalTemplate: false,
                 setIsEditingGlobalTemplate: mockSetIsEditingGlobalTemplate,
+                setIsEditingPersonalTemplate: mockSetIsEditingPersonalTemplate,
                 setPersonalTemplate: mockSetPersonalTemplate,
                 setGlobalTemplate: mockSetGlobalTemplate,
                 setTemplate: mockSetTemplate,
@@ -275,7 +282,9 @@ describe('PageTemplateContext', () => {
                 globalTemplate: mockGlobalTemplate,
                 template: mockGlobalTemplate,
                 isEditingGlobalTemplate: true,
+                isEditingPersonalTemplate: false,
                 setIsEditingGlobalTemplate: mockSetIsEditingGlobalTemplate,
+                setIsEditingPersonalTemplate: mockSetIsEditingPersonalTemplate,
                 setPersonalTemplate: mockSetPersonalTemplate,
                 setGlobalTemplate: mockSetGlobalTemplate,
                 summaryElements: undefined,
@@ -486,7 +495,9 @@ describe('PageTemplateContext', () => {
                 globalTemplate: mockGlobalTemplate,
                 template: mockGlobalTemplate, // Changed from personal to global
                 isEditingGlobalTemplate: true, // Changed from false to true
+                isEditingPersonalTemplate: false,
                 setIsEditingGlobalTemplate: mockSetIsEditingGlobalTemplate,
+                setIsEditingPersonalTemplate: mockSetIsEditingPersonalTemplate,
                 setPersonalTemplate: mockSetPersonalTemplate,
                 setGlobalTemplate: mockSetGlobalTemplate,
                 setTemplate: mockSetTemplate,

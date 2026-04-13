@@ -147,6 +147,8 @@ export enum EventType {
     HomePageTemplateModuleModalCancel,
     HomePageTemplateGlobalTemplateEditingStart,
     HomePageTemplateGlobalTemplateEditingDone,
+    HomePageTemplatePersonalTemplateEditingStart,
+    HomePageTemplatePersonalTemplateEditingDone,
     HomePageTemplateResetToGlobalTemplate,
     HomePageTemplateModuleAssetClick,
     HomePageTemplateModuleViewAllClick,
@@ -1193,6 +1195,14 @@ export interface HomePageTemplateGlobalTemplateEditingDoneEvent extends BaseEven
     type: EventType.HomePageTemplateGlobalTemplateEditingDone;
 }
 
+export interface HomePageTemplatePersonalTemplateEditingStartEvent extends BaseEvent {
+    type: EventType.HomePageTemplatePersonalTemplateEditingStart;
+}
+
+export interface HomePageTemplatePersonalTemplateEditingDoneEvent extends BaseEvent {
+    type: EventType.HomePageTemplatePersonalTemplateEditingDone;
+}
+
 export interface HomePageTemplateResetToGlobalTemplateEvent extends BaseEvent {
     type: EventType.HomePageTemplateResetToGlobalTemplate;
 }
@@ -1477,6 +1487,8 @@ export type Event =
     | HomePageTemplateModuleModalCancelEvent
     | HomePageTemplateGlobalTemplateEditingStartEvent
     | HomePageTemplateGlobalTemplateEditingDoneEvent
+    | HomePageTemplatePersonalTemplateEditingStartEvent
+    | HomePageTemplatePersonalTemplateEditingDoneEvent
     | HomePageTemplateResetToGlobalTemplateEvent
     | HomePageTemplateModuleAssetClickEvent
     | HomePageTemplateModuleExpandClickEvent

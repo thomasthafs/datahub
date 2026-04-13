@@ -18,19 +18,21 @@ interface Props {
 }
 
 export const PageTemplateProvider = ({ children, templateType }: Props) => {
-    const isTemplateEditable = useIsTemplateEditable(templateType);
     // Template state management
     const {
         personalTemplate,
         globalTemplate,
         template,
         isEditingGlobalTemplate,
+        isEditingPersonalTemplate,
         summaryElements,
         setIsEditingGlobalTemplate,
+        setIsEditingPersonalTemplate,
         setPersonalTemplate,
         setGlobalTemplate,
         setTemplate,
     } = useTemplateState(templateType);
+    const isTemplateEditable = useIsTemplateEditable(isEditingPersonalTemplate, isEditingGlobalTemplate);
 
     // Template operations
     const { updateTemplateWithModule, removeModuleFromTemplate, upsertTemplate, resetTemplateToDefault } =
@@ -72,7 +74,9 @@ export const PageTemplateProvider = ({ children, templateType }: Props) => {
             template,
             templateType,
             isEditingGlobalTemplate,
+            isEditingPersonalTemplate,
             setIsEditingGlobalTemplate,
+            setIsEditingPersonalTemplate,
             setPersonalTemplate,
             setGlobalTemplate,
             setTemplate,
@@ -96,7 +100,9 @@ export const PageTemplateProvider = ({ children, templateType }: Props) => {
             template,
             templateType,
             isEditingGlobalTemplate,
+            isEditingPersonalTemplate,
             setIsEditingGlobalTemplate,
+            setIsEditingPersonalTemplate,
             setPersonalTemplate,
             setGlobalTemplate,
             setTemplate,

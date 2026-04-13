@@ -1,7 +1,3 @@
-import { PageTemplateSurfaceType } from '@types';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function useIsTemplateEditable(templateType: PageTemplateSurfaceType) {
-    // Editing is disabled in OSS
-    return false;
+export default function useIsTemplateEditable(isEditingPersonal: boolean, isEditingGlobal: boolean) {
+    return isEditingPersonal || isEditingGlobal;
 }

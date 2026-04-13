@@ -60,6 +60,7 @@ export function useTemplateState(templateType: PageTemplateSurfaceType) {
     }, [areTemplatesInitialized, entityType, entityData, templateType]);
 
     const [isEditingGlobalTemplate, setIsEditingGlobalTemplate] = useState(false);
+    const [isEditingPersonalTemplate, setIsEditingPersonalTemplate] = useState(false);
 
     // The current template is personal unless editing global or personal is missing
     const template = useMemo(
@@ -88,8 +89,10 @@ export function useTemplateState(templateType: PageTemplateSurfaceType) {
         globalTemplate,
         template,
         isEditingGlobalTemplate,
+        isEditingPersonalTemplate,
         summaryElements,
         setIsEditingGlobalTemplate,
+        setIsEditingPersonalTemplate,
         setPersonalTemplate,
         setGlobalTemplate,
         setTemplate,
