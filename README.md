@@ -77,6 +77,26 @@ _Enterprise-grade metadata platform enabling discovery, governance, and observab
 
 ---
 
+## Fork Changes
+
+This is a fork of [datahub-project/datahub](https://github.com/datahub-project/datahub) with the following changes on top of the upstream OSS release:
+
+### Home Page Customization (homeV3)
+
+The OSS build normally disables the home page settings button entirely. This fork re-enables it so that all users can customize their personal home page layout:
+
+- **"Customize home page" button** — every user can enter a personal editing mode to rearrange their home page modules
+- **"Edit org default" button** — users with the `manageHomePageTemplates` privilege can still edit the global template (unchanged from upstream)
+- **"Reset to default" action** — users can reset their personal layout back to the org default at any time
+- **Analytics events** — `HomePageTemplatePersonalTemplateEditingStart` and `HomePageTemplatePersonalTemplateEditingDone` events are emitted alongside the existing global template events
+
+### Dev / Testing Utilities
+
+- `docker-compose.quickstart.yml` — a self-contained Docker Compose file for spinning up a local DataHub instance
+- `seed_data.py` — a seed script that emits dummy metadata (domains, datasets, dashboards, etc.) to a running DataHub instance for testing the custom home page
+
+---
+
 <p align="center">
   <a href="https://demo.datahub.com">
     <img width="90%" src="https://raw.githubusercontent.com/datahub-project/static-assets/refs/heads/main/imgs/demos/datahub-tour.gif" alt="DataHub Product Tour" />
